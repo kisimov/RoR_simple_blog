@@ -1,32 +1,46 @@
-<h1><%= @article.title %></h1>
-<p>
-	<%= @article.text %>
-</p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-sm-8 col-xs-12">
 
-<h3>Comments</h3>
-	<% @article.comments.each do |comment| %>
-<p>
-	<i> <%= comment.author %> said:	</i><br />
-	<%= comment.body %>
-</p>
-	<% end %>
+			<h1><%= @article.title %></h1>
+			
+			<p>
+				<%= @article.text %>
+			</p>
 
-<h3>Add comment</h3>
-<p>
-<%= form_for([@article, @article.comments.build]) do |f| %>
-	<p>
-		<%= f.label :author %> <br />
-		<%= f.text_field :author %>
-	</p>
+			<hr>
 
-	<p>
-		<%= f.label :body %> <br />
-		<%= f.text_area :body %>
-	</p>
+			<h4>Comments</h4>
+			<% @article.comments.each do |comment| %>
+				<p>
+					<i> <%= comment.author %> said:	</i><br />
+					<%= comment.body %>
 
-	<p>
-		<%= f.submit %>
-	</p>
-</p>
+				</p>
+				<br />
+			<% end %>
 
-<% end %>
+			<h5>Add comment:</h5>
+			<p>
+			<%= form_for([@article, @article.comments.build]) do |f| %>
+				<p>
+					<%= f.label :author %> <br />
+					<%= f.text_field :author %>
+				</p>
+
+				<p>
+					<%= f.label :body %> <br />
+					<label class="sr-only" for="message">Comment</label>
+					<%= f.text_area :body, class: 'form-control', placeholder: 'Text', rows: 3 %>
+				</p>
+
+				<p>
+					<%= f.submit 'Comment!', class: 'btn btn-success btn-md' %>
+				</p>
+			</p>
+
+			<% end %>
+
+		</div>
+	</div>
+</div>
