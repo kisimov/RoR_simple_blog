@@ -51,6 +51,11 @@ gem 'devise'
 gem "bcrypt-ruby", '~> 3.0.0'
 
 group :test, :development do
-	gem "rspec-rails"
-	gem 'capybara'	
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
+  gem 'capybara'
+end
+
+group :test do
+  gem "shoulda-matchers", "< 3.0.0",
+    require: false
 end
