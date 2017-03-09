@@ -53,6 +53,7 @@ gem "bcrypt-ruby", '~> 3.0.0'
 group :test, :development do
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   gem 'capybara'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :test do
