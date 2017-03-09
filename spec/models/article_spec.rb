@@ -9,13 +9,4 @@ RSpec.describe Article do
     it { should validate_presence_of :text }
  
   end
- 
-
- 
-  describe "associations" do
- 
-    it { should have_many :comments }
- 
-  end
- 
 end
